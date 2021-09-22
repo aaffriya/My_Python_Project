@@ -1,6 +1,6 @@
 class Library:
     Library_Books_record = ("Python ML", "Python DSA", "Python NumPy", "Python Pandas")
-    Available_Books_record = ["Python ML", "Python DSA", "Python NumPy", "Python Pandas"]
+    Available_Books_record = list(Library_Books_record)
     def List_books():
         serial = 0
         print("====== List of Available Books ======")
@@ -27,16 +27,18 @@ class Students:
                 print("Alert: Please, enter a Available Book only")
               
     def Return_book():
-        return_input = input("Which book you want to Return..")
-        if len(Library.Available_Books_record)!=len(Library.Available_Books_record):
+        try:
+            return_input = input("Which book you want to Return.\n:")
             if return_input in Library.Library_Books_record:
                 if not return_input in Library.Available_Books_record:
                     Library.Available_Books_record.append(return_input)
                     print("Alert: Thank You For Returned book..")
+                else:
+                    print(f"Alert: {return_input} is not Borrow in Past.")
             else:
                 print("Alert: This Book Record not found in Library.")
-        else:
-            print("Alert: Borrowed Book Record not Found.")
+        except Exception as e:
+            print(e)
 while True:
     print('''\n\t\t\tWelcome to\n\t\tBal Bhawan District Library Rewari\n\t\tPress 1. for List Books\n\t\tPress 2. for Borrow Book\n\t\tPress 3. For Return Book\n\t\tPress 4. for Exit\n''')
     try:
