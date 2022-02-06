@@ -38,19 +38,19 @@ int main()
         {
             cout << "Enter Roll no : \n";
             cin >> n;
-            obj[n].setdata();
+            obj[--n].setdata();
         }
         else if (choice == '2')
         {
             cout << "Enter Roll no : \n";
             cin >> n;
-            obj[n].getdata();
+            obj[--n].getdata();
         }
         else if (choice == '3')
         {
             cout << "Enter Roll no : \n";
             cin >> n;
-            obj[n].get_grade();
+            obj[--n].get_grade();
         }
         else if (choice == '4')
         {
